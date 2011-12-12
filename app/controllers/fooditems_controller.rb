@@ -35,4 +35,11 @@ class FooditemsController < ApplicationController
     end
   end
 
+  def destroy
+    @fooditem = Fooditem.find(params[:id])
+    @fooditem.destroy
+    flash[:notice] = "Poistettu"
+    redirect_to fooditems_path
+  end
+
 end
