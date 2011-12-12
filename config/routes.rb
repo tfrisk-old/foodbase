@@ -3,6 +3,6 @@ Foodbase::Application.routes.draw do
 
   resources :fooditems
 
-  root :to => 'home#index'
+  root :to => 'fooditems#index'
 
 end

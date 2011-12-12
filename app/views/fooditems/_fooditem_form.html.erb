@@ -1,0 +1,22 @@
+<%= form_for @fooditem do |f| %>
+
+  <% unless @fooditem.errors.empty? %>
+    <h2> Failed to save fooditem </h2>
+    <% @fooditem.errors.full_messages.each do |msg| %>
+      <p> <%= msg %> </p>
+    <% end %>
+  <% end %>
+
+  <div>Name:</br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>Description:</br>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.submit "Tallenna" %>
+  tai
+  <%= link_to "Palaa", fooditems_path %>
+
+<% end %>

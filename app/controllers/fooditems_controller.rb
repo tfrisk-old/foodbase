@@ -21,4 +21,18 @@ class FooditemsController < ApplicationController
     end
   end
 
+  def new
+    @fooditem = Fooditem.new
+  end
+
+  def create
+    @fooditem = Fooditem.new(params[:fooditem])
+    if @fooditem.save
+      flash[:notice] = "Tallennettu"
+      redirect_to fooditems_path
+    else
+      render action: :new
+    end
+  end
+
 end

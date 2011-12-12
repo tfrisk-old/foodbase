@@ -1,7 +1,10 @@
-<h1>Fooditems</h1>
+<h1>Ruokia</h1>
 
 <ul>
   <% @fooditems.each do |item| %>
     <li> <%= link_to item.name, fooditem_path(item) %> </li>
   <% end %>
 </ul>
+
+<%= link_to "Uusi", new_fooditem_path %>
+
