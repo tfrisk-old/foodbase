@@ -1,0 +1,31 @@
+models:
+
+fooditem
+-name
+-producer
+-has_many :ingredients
+
+ingredient
+-name
+-description
+
+producer
+# food manufacturer/producer
+-name
+-description
+-has_many: fooditem
+
+
+views:
+
+-list all fooditems
+-view fooditem
+-edit fooditem
+-new fooditem
+-view ingredient
+-edit ingredient
+-new ingredient
+-view producer
+-edit producer
+-new producer
+
