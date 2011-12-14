@@ -1,0 +1,10 @@
+<h1>Ainesosia</h1>
+
+<ul>
+  <% @ingredients.each do |item| %>
+    <li> <%= link_to item.name, ingredient_path(item) %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Uusi", new_ingredient_path %>
+

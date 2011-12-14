@@ -1,0 +1,22 @@
+<%= form_for @ingredient do |f| %>
+
+  <% unless @ingredient.errors.empty? %>
+    <h2> Failed to save ingredient </h2>
+    <% @ingredient.errors.full_messages.each do |msg| %>
+      <p> <%= msg %> </p>
+    <% end %>
+  <% end %>
+
+  <div>Name:</br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>Description:</br>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.submit "Tallenna" %>
+  tai
+  <%= link_to "Palaa", ingredients_path %>
+
+<% end %>

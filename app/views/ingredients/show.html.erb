@@ -1,0 +1,9 @@
+<h1> Ainesosa <% @ingredient.name %> </h1>
+
+<p> Name: <%= @ingredient.name %> </p>
+<p> Description: <%= @ingredient.description %> </p>
+
+<%= link_to "takaisin", ingredients_path %>
+<%= link_to "muokkaa", edit_ingredient_path(@ingredient) %>
+<%= link_to "poista", ingredient_path, :method => :delete %>
+
