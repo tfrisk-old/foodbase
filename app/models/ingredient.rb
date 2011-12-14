@@ -1,6 +1,6 @@
 class Ingredient < ActiveRecord::Base
 
-  belongs_to :fooditem
+  has_and_belongs_to_many :fooditems
   validates :name, :presence => :true
 
 end

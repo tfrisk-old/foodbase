@@ -3,6 +3,14 @@
 <p> Name: <%= @fooditem.name %> </p>
 <p> Description: <%= @fooditem.description %> </p>
 
+<p> Ingredients:
+  <ul>
+    <%= @fooditem.ingredients.each do |ingredient| %>
+      <li> ingredient.name </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to "takaisin", fooditems_path %>
 <%= link_to "muokkaa", edit_fooditem_path(@fooditem) %>
 <%= link_to "poista", fooditem_path, :method => :delete %>
