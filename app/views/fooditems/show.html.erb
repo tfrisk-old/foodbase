@@ -5,8 +5,8 @@
 
 <p> Ingredients:
   <ul>
-    <% if !@fooditem.ingredients.empty? %>
-      <%= @fooditem.ingredients.each do |ingredient| %>
+    <% if !@fooditem_ingredients.nil? %>
+      <%= @fooditem_ingredients.each do |ingredient| %>
         <li> <%= @ingredient.name %> </li>
       <% end %>
     <% else %>
