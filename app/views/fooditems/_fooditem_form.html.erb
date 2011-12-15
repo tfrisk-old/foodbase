@@ -15,13 +15,6 @@
     <%= f.text_area :description %>
   </div>
 
-  <div>Ingredients:</br>
-    <%= f.fields_for :ingredients do |ingredient| %>
-      Id: <%= ingredient.text_field :fooditem %></br>
-      Name: <%= ingredient.text_field :name %>
-    <% end %>
-  </div>
-
   <%= f.submit "Tallenna" %>
   tai
   <%= link_to "Palaa", fooditems_path %>

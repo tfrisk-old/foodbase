@@ -5,6 +5,7 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+    @fooditem_list = @ingredient.fooditems.all
   end
 
   def edit
@@ -23,6 +24,7 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
+    @fooditem_id = params[:fooditem_id]
   end
 
   def create

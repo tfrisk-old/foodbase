@@ -5,10 +5,12 @@ class FooditemsController < ApplicationController
 
   def show
     @fooditem = Fooditem.find(params[:id])
+    @ingredient_list = @fooditem.ingredients.all
   end
 
   def edit
     @fooditem = Fooditem.find(params[:id])
+    @ingredient_list = @fooditem.ingredients.all
   end
 
   def update

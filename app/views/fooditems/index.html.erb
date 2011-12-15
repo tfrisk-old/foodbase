@@ -2,7 +2,11 @@
 
 <ul>
   <% @fooditems.each do |item| %>
-    <li> <%= link_to item.name, fooditem_path(item) %> </li>
+    <li>
+      <%= link_to item.name, fooditem_path(item) %>
+      , <%= truncate(item.description, :length => 50) %>
+      , <%= item.ingredients.count %>
+    </li>
   <% end %>
 </ul>
 

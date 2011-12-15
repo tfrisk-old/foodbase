@@ -5,13 +5,19 @@
 
 <p> Ingredients:
   <ul>
-    <% if !@fooditem.ingredients.empty? %>
-      <%= @fooditem.ingredients.each do |ing| %>
-        <li> <%= ing.name %> : <%= ing.description %> </li>
+    <% if !@ingredient_list.empty? %>
+      <% @ingredient_list.each do |ing| %>
+        <li>
+          <%= link_to ing.name, ingredient_path(ing.id) %> : <%= ing.description %>
+          <%= link_to "muokkaa", edit_ingredient_path(ing.id) %>
+        </li>
       <% end %>
     <% else %>
       <li> No ingredients </li>
     <% end %>
+    <li>
+      <%= link_to "lisää", new_ingredient_path(:fooditem_id => @fooditem.id) %>
+    </li>
   </ul>
 </p>
 
