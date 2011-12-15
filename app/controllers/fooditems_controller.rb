@@ -5,7 +5,6 @@ class FooditemsController < ApplicationController
 
   def show
     @fooditem = Fooditem.find(params[:id])
-    @ingredient_list = FooditemIngredient.all
   end
 
   def edit
