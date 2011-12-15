@@ -1,17 +1,19 @@
 <h1>Ainesosia</h1>
 
-<ul>
+<table class="bordered-table condensed-table zebra-striped">
+  <thead>
+    <tr><th>Nimi</th><th>Kuvaus</th><th>Viittaukset</th></tr>
+  </thead>
   <% @ingredients.each do |item| %>
-    <li>
-      <%= link_to item.name, ingredient_path(item) %>
-      , <%= truncate(item.description, :length => 50) %>
-      , <%= item.fooditems.count %>
-    </li>
+    <tr>
+      <td> <%= link_to item.name, ingredient_path(item) %> </td>
+      <td> <%= truncate(item.description, :length => 80) %> </td>
+      <td> <%= item.fooditems.count %> </td>
+    </tr>
   <% end %>
-</ul>
+</table>
 
-<%= link_to "Uusi", new_ingredient_path %>
+<div class="btn">
+  <%= link_to "Uusi", new_ingredient_path %>
+</div>
 
-<p>
-<%= link_to "Ruoat", fooditems_path %>
-</p>
