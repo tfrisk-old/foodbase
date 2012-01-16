@@ -1,0 +1,18 @@
+<h1>Valmistajia</h1>
+
+<table class="bordered-table condensed-table zebra-striped">
+  <thead>
+    <tr><th>Nimi</th><th>Kuvaus</th></tr>
+  </thead>
+  <% @manufacturers.each do |item| %>
+    <tr>
+      <td> <%= link_to item.name, manufacturer_path(item) %> </td>
+      <td> <%= truncate(item.description, :length => 80) %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="btn">
+  <%= link_to "Uusi", new_manufacturer_path %>
+</div>
+

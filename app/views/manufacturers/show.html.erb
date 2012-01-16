@@ -1,0 +1,9 @@
+<h1> Valmistaja <% @manufacturer.name %> </h1>
+
+<p> Name: <%= @manufacturer.name %> </p>
+<p> Description: <%= @manufacturer.description %> </p>
+
+<%= link_to "takaisin", manufacturers_path %>
+<%= link_to "muokkaa", edit_manufacturer_path(@manufacturer) %>
+<%= link_to "poista", manufacturer_path, :method => :delete %>
+
