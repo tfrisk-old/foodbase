@@ -6,6 +6,8 @@ class Fooditem < ActiveRecord::Base
   has_many :ingredients, :through => :fooditem_ingredients
   accepts_nested_attributes_for :fooditem_ingredients, :allow_destroy => :true
 
+  belongs_to :manufacturer
+
   validates :name, :presence => :true
 
 end
