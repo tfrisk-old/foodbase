@@ -2,13 +2,14 @@
 
 <table class="bordered-table condensed-table zebra-striped">
   <thead>
-    <tr><th>Nimi</th><th>Kuvaus</th><th>Viittaukset</th></tr>
+    <tr><th>Nimi</th><th>Kuvaus</th><th>Viittaukset</th><th>Arvio</th></tr>
   </thead>
   <% @ingredients.each do |item| %>
     <tr>
       <td> <%= link_to item.name, ingredient_path(item) %> </td>
       <td> <%= truncate(item.description, :length => 80) %> </td>
       <td> <%= item.fooditems.count %> </td>
+      <td> <%= item.rating %> </td>
     </tr>
   <% end %>
 </table>
