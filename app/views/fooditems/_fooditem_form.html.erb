@@ -19,4 +19,16 @@
   tai
   <%= link_to "Palaa", fooditems_path %>
 
+  <div>Ingredients:</br>
+  <% @ingredient_list.each do |fooditem_ingredient| %>
+    <div class="checkbox">
+      <%= f.fields_for :fooditem_ingredients, fooditem_ingredient do |tag_fields| %>
+        <%= tag_fields.hidden_field :name %>
+        <%= tag_fields.check_box :name %>
+        <label><%= fooditem_ingredient.name %></label>
+      <% end %>
+    </div></br>
+  <% end %>
+  </div>
+
 <% end %>
