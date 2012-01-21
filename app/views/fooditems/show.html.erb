@@ -4,21 +4,24 @@
 <p> Description: <%= @fooditem.description %> </p>
 
 <p> Ingredients:
-  <ul>
+  <table class="bordered-table condensed-table zebra-striped">
     <% if !@ingredient_list.empty? %>
+      <thead>
+        <tr><th>Name</th><th>Description</th><th>Rating</th><th>Edit</th></tr>
+      </thead>
       <% @ingredient_list.each do |ing| %>
-        <li>
-          <%= link_to ing.name, ingredient_path(ing.id) %> : <%= ing.description %>
-          <%= link_to "muokkaa", edit_ingredient_path(ing.id) %>
-        </li>
+        <tr>
+          <td> <%= link_to ing.name, ingredient_path(ing.id) %> </td>
+          <td> <%= ing.description %> </td>
+          <td> <%= ing.rating %> </td>
+          <td> <%= link_to "Edit", edit_ingredient_path(ing.id) %> </td>
+        </tr>
       <% end %>
     <% else %>
-      <li> No ingredients </li>
+      <tr> No ingredients </tr>
     <% end %>
-    <li>
-      <%= link_to "lisää", new_ingredient_path(:fooditem_id => @fooditem.id) %>
-    </li>
-  </ul>
+  </table>
+  <%= link_to "lisää", new_ingredient_path(:fooditem_id => @fooditem.id) %>
 </p>
 
 <%= link_to "takaisin", fooditems_path %>
