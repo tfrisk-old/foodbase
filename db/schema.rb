@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121142444) do
+ActiveRecord::Schema.define(:version => 20120121154524) do
 
   create_table "fooditem_ingredients", :id => false, :force => true do |t|
     t.integer "fooditem_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120121142444) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "manufacturer_id"
   end
 
   create_table "ingredients", :force => true do |t|
