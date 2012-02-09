@@ -33,7 +33,7 @@ class FooditemsControllerTest < ActionController::TestCase
   end
 
   test "create fooditem with invalid parameters" do
-    post :create, book: {name: '', description: 'No such item'}
+    post :create, fooditem: {name: '', description: 'No such item'}
     assert_response :success
     assert assigns(:fooditem)
     assert assigns(:fooditem).new_record?
