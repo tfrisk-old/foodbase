@@ -6,7 +6,7 @@ class IngredientTest < ActiveSupport::TestCase
     # fixture one
     @ingredient = ingredients(:one)
     # new and unsaved ingredient
-    @new_ingredient = Fooditem.new(@ingredient.attributes.merge({:name => 'New' }))
+    @new_ingredient = Ingredient.new(@ingredient.attributes.merge({:name => 'New' }))
   end
 
   test "should save valid ingredient" do
