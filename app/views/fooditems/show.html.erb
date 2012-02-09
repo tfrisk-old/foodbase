@@ -2,7 +2,7 @@
 
 <p> Name: <%= @fooditem.name %> </p>
 <p> Description: <%= @fooditem.description %> </p>
-<p> Manufacturer: <%= @fooditem.manufacturer %> </p>
+<p> Manufacturer: <%= @fooditem.manufacturer ? @fooditem.manufacturer.name : "None" %> </p>
 
 <p> Ingredients:
   <table class="bordered-table condensed-table zebra-striped">
