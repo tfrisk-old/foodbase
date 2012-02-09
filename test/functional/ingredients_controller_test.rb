@@ -25,7 +25,7 @@ class IngredientsControllerTest < ActionController::TestCase
 
   test "create ingredient with valid parameters" do
     assert_difference("Ingredient.count", +1) do
-      post :create, ingredient: {name: 'New item', description: 'Brand new item'}
+      post :create, ingredient: {name: 'New item', description: 'Brand new item', rating: 9.9}
       assert_response :redirect
       assert_redirected_to ingredients_path
       assert flash[:notice]

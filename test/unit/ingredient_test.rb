@@ -21,4 +21,18 @@ class IngredientTest < ActiveSupport::TestCase
     assert !@new_ingredient.save, "Saved the ingredient without a name"
   end
 
+  test "should not save ingredient without a rating" do
+    @new_ingredient.rating = ''
+    assert @new_ingredient.invalid?
+    assert @new_ingredient.errors[:rating].any?
+    assert !@new_ingredient.save, "Saved the ingredient without a rating"
+  end
+
+  test "should not save ingredient with invalid rating" do
+    @new_ingredient.rating = 'invalidfloat'
+    assert @new_ingredient.invalid?
+    assert @new_ingredient.errors[:rating].any?
+    assert !@new_ingredient.save, "Saved the ingredient with invalid rating"
+  end
+
 end

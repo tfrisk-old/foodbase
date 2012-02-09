@@ -5,5 +5,6 @@ class Ingredient < ActiveRecord::Base
   has_many :fooditems, :through => :fooditem_ingredients
 
   validates :name, :presence => :true
+  validates_numericality_of :rating
 
 end

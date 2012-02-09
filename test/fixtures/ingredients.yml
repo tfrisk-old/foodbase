@@ -3,7 +3,9 @@
 one:
   name: MyString
   description: MyString
+  rating: 3.3
 
 two:
   name: MyString
   description: MyString
+  rating: 4.9
