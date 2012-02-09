@@ -20,6 +20,7 @@
   <%= link_to "Palaa", fooditems_path %>
 
   <div>Ingredients:</br>
+  <% if !@ingredient_list.nil? %>
   <% @ingredient_list.each do |fooditem_ingredient| %>
     <div class="checkbox">
       <%= f.fields_for :fooditem_ingredients, fooditem_ingredient do |tag_fields| %>
@@ -28,6 +29,7 @@
         <label><%= fooditem_ingredient.name %></label>
       <% end %>
     </div></br>
+  <% end %>
   <% end %>
   </div>
 
