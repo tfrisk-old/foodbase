@@ -1,31 +1,28 @@
-models:
+########
+Foodbase
+########
 
-fooditem
--name
--producer
--has_many :ingredients
+Introduction
 
-ingredient
+Foodbase is Ruby on Rails application for storing data about different foods.
+This project is my RoR learning project.
+
+Idea of the application is that people can check what they are eating and what kind of ingredients there are hidden in different foods.
+
+
+Data structure
+
+fooditem: foods that have a manufacturer and contain many ingredients
 -name
 -description
-
-producer
-# food manufacturer/producer
+-manufacturer
+-ingredients[]
+ingredient: ingredients for fooditems
 -name
 -description
--has_many: fooditem
-
-
-views:
-
--list all fooditems
--view fooditem
--edit fooditem
--new fooditem
--view ingredient
--edit ingredient
--new ingredient
--view producer
--edit producer
--new producer
+-rating
+manufacturer: fooditem manufacturers
+-name
+-description
+-fooditems[]
 
