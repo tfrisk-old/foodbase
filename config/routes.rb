@@ -1,11 +1,16 @@
 Foodbase::Application.routes.draw do
   get "home/index"
 
-  resources :fooditems
+  resources :fooditems do
+    resources :manufacturers
+  end
   resources :ingredients do
     resources :fooditems_ingredients
   end
-  resources :manufacturers
+
+  resources :manufacturers do
+    resources :fooditems
+  end
 
   root :to => 'fooditems#index'
 

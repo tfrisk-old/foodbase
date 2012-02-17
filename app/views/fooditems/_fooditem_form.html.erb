@@ -26,7 +26,7 @@
       <%= f.fields_for :m, m do |tag_fields| %>
         <%= tag_fields.hidden_field :name %>
         <%= tag_fields.check_box :name %>
-        <label><%= m.name %></label>
+        <label><%= link_to m.name, manufacturer_fooditem_path(Manufacturer.find_by_name(m.name)), remote: false, :method => :put %></label>
       <% end %>
     </div></br>
   <% end %>

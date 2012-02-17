@@ -17,7 +17,7 @@ class FooditemsController < ApplicationController
   def update
     @fooditem = Fooditem.find(params[:id])
     # append manufacturer selection on params[]
-    @manufacturer = Manufacturer.find(params[:m])
+    #@manufacturer = Manufacturer.find(params[:m])
     if @fooditem.update_attributes(params[:fooditem])
       flash[:notice] = "Homma OK"
       redirect_to fooditem_path(@fooditem)
