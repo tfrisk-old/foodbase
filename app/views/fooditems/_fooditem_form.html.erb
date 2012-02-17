@@ -1,3 +1,7 @@
+<% @manufacturer_list.each do |m| %>
+  <p> <%= m.name %> </p>
+<% end %>
+
 <%= form_for @fooditem do |f| %>
 
   <% unless @fooditem.errors.empty? %>
@@ -13,6 +17,20 @@
 
   <div>Description:</br>
     <%= f.text_area :description %>
+  </div>
+
+  <div>Manufacturer:</br>
+  <% if !@manufacturer_list.nil? %>
+  <% @manufacturer_list.each do |m| %>
+    <div class="checkbox">
+      <%= f.fields_for :m, m do |tag_fields| %>
+        <%= tag_fields.hidden_field :name %>
+        <%= tag_fields.check_box :name %>
+        <label><%= m.name %></label>
+      <% end %>
+    </div></br>
+  <% end %>
+  <% end %>
   </div>
 
   <%= f.submit "Tallenna" %>

@@ -11,10 +11,13 @@ class FooditemsController < ApplicationController
   def edit
     @fooditem = Fooditem.find(params[:id])
     @ingredient_list = @fooditem.ingredients.all
+    @manufacturer_list = Manufacturer.all
   end
 
   def update
     @fooditem = Fooditem.find(params[:id])
+    # append manufacturer selection on params[]
+    @manufacturer = Manufacturer.find(params[:m])
     if @fooditem.update_attributes(params[:fooditem])
       flash[:notice] = "Homma OK"
       redirect_to fooditem_path(@fooditem)
