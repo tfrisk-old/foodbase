@@ -12,6 +12,7 @@ Foodbase::Application.routes.draw do
     resources :fooditems
   end
 
+  resources :fooditems
   root :to => 'fooditems#index'
 
 end

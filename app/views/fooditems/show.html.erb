@@ -26,6 +26,6 @@
 </p>
 
 <%= link_to "takaisin", fooditems_path %>
-<%= link_to "muokkaa", edit_fooditem_path(@fooditem) %>
+<%= link_to "muokkaa", edit_fooditem_path(@fooditem.id) %>
 <%= link_to "poista", fooditem_path, :method => :delete %>
 
